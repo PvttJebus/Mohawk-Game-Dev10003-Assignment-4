@@ -8,6 +8,9 @@ namespace Team_4_Platform_Project___Assignment_4
         // If you need variables in the Program class (outside functions), you must mark them as static
         static string title = "Game Title";
 
+
+        static MoveGrav moveGrav = new MoveGrav();
+
         static void Main(string[] args)
         {
             // Create a window to draw to. The arguments define width and height
@@ -30,7 +33,7 @@ namespace Team_4_Platform_Project___Assignment_4
                 Update();
 
                 // Stop drawing to the canvas, begin displaying the frame
-                Raylib.EndDrawing();
+                 Raylib.EndDrawing();
             }
             // Close the window
             Raylib.CloseWindow();
@@ -38,12 +41,22 @@ namespace Team_4_Platform_Project___Assignment_4
 
         static void Setup()
         {
+            moveGrav = new MoveGrav();
+            
             // Your one-time setup code here
         }
 
         static void Update()
         {
+            moveGrav.CharacterController();
+            
             // Your game code run each frame here
+        }
+
+
+        public void TestBlocks()
+        {
+            
         }
     }
 }
