@@ -49,14 +49,19 @@ namespace Team_4_Platform_Project___Assignment_4
         static void Update()
         {
             moveGrav.CharacterController();
+            TestBlocks();
             
             // Your game code run each frame here
         }
 
 
-        public void TestBlocks()
+        static void TestBlocks()
         {
-            
+            Raylib.DrawRectangle(450,450,350,50,Color.Black);
+            Raylib.DrawRectangle(0,450,350,50,Color.Black);
+            Raylib.DrawRectangle(275, 350, 250, 50, Color.Black);
+
+            if (moveGrav.playerPosition ==  ) { }
         }
     }
 }
