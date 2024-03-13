@@ -57,11 +57,33 @@ namespace Team_4_Platform_Project___Assignment_4
 
         static void TestBlocks()
         {
-            Raylib.DrawRectangle(450,450,350,50,Color.Black);
+            
             Raylib.DrawRectangle(0,450,350,50,Color.Black);
-            Raylib.DrawRectangle(275, 350, 250, 50, Color.Black);
+            
 
-            if (moveGrav.playerPosition ==  ) { }
+            Vector2 rectanglePosition = new Vector2(0,450);
+            Vector2 rectangleSize = new Vector2(350,50);
+
+            float leftEdge = rectanglePosition.X;
+            float rightEdge = rectanglePosition.X + rectangleSize.X;
+            float topEdge = rectanglePosition.Y-20;
+            float bottomEdge = rectanglePosition.Y-20 + rectangleSize.Y;
+
+            bool isWithinX = moveGrav.playerPosition.X > leftEdge && moveGrav.playerPosition.X < rightEdge;
+            bool isWithinY = moveGrav.playerPosition.Y > topEdge && moveGrav.playerPosition.Y < bottomEdge;
+            bool isWithinRectangle = isWithinX && isWithinY;
+            bool isBelowBlock = moveGrav.playerPosition.Y + 25 >= 450;
+            bool isTravelingDown = moveGrav.playerVelocity.Y > 0;
+
+            if (isWithinRectangle)
+            {
+                
+                if (isBelowBlock && isTravelingDown)
+                {
+                    moveGrav.playerPosition.Y = 450 -20;
+                    moveGrav.playerVelocity = Vector2.Zero;
+                }
+            }
         }
     }
 }
