@@ -5,36 +5,38 @@ using System.Timers;
 public class Roomba
 {
     public MoveGrav moveGrav;
-    public List<Vector2> playerPositions;
+    
     public bool roombaActive = false;
 
     public Roomba()
     {
         moveGrav = new MoveGrav();
+        
     }
 
-    public void PlayerPositionTracking()
+    
+
+
+    public void RoombaManager(MoveGrav moveGrav)
     {
-        playerPositions.Add(new Vector2(moveGrav.playerPosition.X, moveGrav.playerPosition.Y));
-    }
-
-
-    public void RoombaManager()
-    {
-        PlayerPositionTracking();
-
-        if (playerPositions.Count > 10)
+        if (moveGrav.playerPositions.Count > 100)
         {
             roombaActive = true;
         }
 
-        if (roombaActive = true)
+        if (roombaActive == true)
         {
-            foreach (Vector2 position in playerPositions)
+            for (int i = 0; i < moveGrav.playerPositions.Count; i++)
             {
-                Raylib.DrawCircleV(position, 40, Color.Black);
-
+                Raylib.DrawCircleV(moveGrav.playerPositions[i], 40, Color.Black);
+                moveGrav.playerPositions.RemoveAt(i);
             }
+            
+
+
+
+
+
         }
     }
 }

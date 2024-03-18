@@ -8,14 +8,26 @@ public class MoveGrav
     public Vector2 playerVelocity;
     public Vector2 gravity = new Vector2(0, 5f);
     public bool hasJumped = false;
+    public List<Vector2> playerPositions;
 
 
+    public MoveGrav()
+    {
+        playerPositions = new List<Vector2>();
+    }
 
     public void CharacterController()
     {
         Raylib.DrawCircleV(playerPosition, 25, Color.Blue);
         GravitySim();
         PlayerMovement();
+        PlayerPositionTracking();
+        
+    }
+
+    public void PlayerPositionTracking()
+    {
+        playerPositions.Add(new Vector2(playerPosition.X, playerPosition.Y));
     }
 
     public void GravitySim()

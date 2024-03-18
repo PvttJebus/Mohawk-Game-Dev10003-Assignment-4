@@ -50,7 +50,7 @@ namespace Team_4_Platform_Project___Assignment_4
         static void Update()
         {
             moveGrav.CharacterController();
-            roomba.RoombaManager();
+            roomba.RoombaManager(moveGrav);
             TestBlocks();
             
             // Your game code run each frame here
