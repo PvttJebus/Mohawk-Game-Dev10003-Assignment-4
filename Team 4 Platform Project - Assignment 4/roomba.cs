@@ -19,7 +19,7 @@ public class Roomba
 
     public void RoombaManager(MoveGrav moveGrav)
     {
-        if (moveGrav.playerPositions.Count > 100)
+        if (moveGrav.playerPositions.Count > 200)
         {
             roombaActive = true;
         }
@@ -30,6 +30,19 @@ public class Roomba
             {
                 Raylib.DrawCircleV(moveGrav.playerPositions[i], 40, Color.Black);
                 moveGrav.playerPositions.RemoveAt(i);
+                if (roombaActive == true)
+                {
+                    float distance = Vector2.Distance(moveGrav.playerPositions[i], moveGrav.playerPosition);
+                    float radii = 25;
+                    if (distance < radii)
+                    {
+                        moveGrav.playerIsAlive = false;
+                        
+                        
+                    }
+                }
+                GameOver(moveGrav);
+                break;
             }
             
 
@@ -38,5 +51,19 @@ public class Roomba
 
 
         }
+        
+    }
+
+   
+
+    public void GameOver(MoveGrav moveGrav)
+    {
+        
+        if (moveGrav.playerIsAlive == false)
+        {
+            Raylib.DrawRectangle(0, 0, Raylib.GetScreenWidth(), Raylib.GetScreenHeight(), Color.Black);
+            Raylib.DrawText($"Game Over", Raylib.GetScreenWidth() / 2 - 40, Raylib.GetScreenHeight() / 2 - 40, 20, Color.Red);
+        }
+        
     }
 }

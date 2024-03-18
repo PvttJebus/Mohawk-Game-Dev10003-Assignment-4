@@ -9,6 +9,7 @@ public class MoveGrav
     public Vector2 gravity = new Vector2(0, 5f);
     public bool hasJumped = false;
     public List<Vector2> playerPositions;
+    public bool playerIsAlive = true;
 
 
     public MoveGrav()
@@ -40,32 +41,34 @@ public class MoveGrav
 
     public void PlayerMovement()
     {
-        
-        if (Raylib.IsKeyDown(KeyboardKey.Space) && hasJumped == false)
+        if (playerIsAlive == true)
         {
-            playerPosition.Y -= 125;
-            hasJumped = true;
-
-            if (hasJumped == true)
+            if (Raylib.IsKeyDown(KeyboardKey.Space) && hasJumped == false)
             {
-                System.Timers.Timer runonce = new System.Timers.Timer(3000);
-                runonce.Start();
-                runonce.Elapsed += OnTimedEvent;
-                runonce.AutoReset = true;
-                runonce.Enabled = true;
+                playerPosition.Y -= 125;
+                hasJumped = true;
+
+                if (hasJumped == true)
+                {
+                    System.Timers.Timer runonce = new System.Timers.Timer(3000);
+                    runonce.Start();
+                    runonce.Elapsed += OnTimedEvent;
+                    runonce.AutoReset = true;
+                    runonce.Enabled = true;
+                }
+
             }
 
-        }
+            if (Raylib.IsKeyDown(KeyboardKey.D))
+            {
 
-        if (Raylib.IsKeyDown(KeyboardKey.D))
-        {
+                playerPosition.X += 10;
+            }
+            if (Raylib.IsKeyDown(KeyboardKey.A))
+            {
 
-            playerPosition.X += 10;
-        }
-        if (Raylib.IsKeyDown(KeyboardKey.A))
-        {
-
-            playerPosition.X -= 10;
+                playerPosition.X -= 10;
+            }
         }
     }
 
