@@ -10,6 +10,7 @@ namespace Team_4_Platform_Project___Assignment_4
 
 
         static MoveGrav moveGrav = new MoveGrav();
+        static Roomba roomba = new Roomba();
 
         static void Main(string[] args)
         {
@@ -42,13 +43,14 @@ namespace Team_4_Platform_Project___Assignment_4
         static void Setup()
         {
             moveGrav = new MoveGrav();
-            
+            roomba = new Roomba();
             // Your one-time setup code here
         }
 
         static void Update()
         {
             moveGrav.CharacterController();
+            roomba.RoombaManager();
             TestBlocks();
             
             // Your game code run each frame here

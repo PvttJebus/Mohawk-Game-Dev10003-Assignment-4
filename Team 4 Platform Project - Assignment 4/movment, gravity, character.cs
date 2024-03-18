@@ -2,7 +2,7 @@
 using System.Numerics;
 using System.Timers;
 
-internal class MoveGrav
+public class MoveGrav
 {
     public Vector2 playerPosition = new Vector2(400, Raylib.GetScreenHeight()) / 2;
     public Vector2 playerVelocity;
