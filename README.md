@@ -13,7 +13,7 @@ Controls:
 A = Left
 D = Right 
 Space = Jump 
-- There's a 2-ish second timer on jumps, so use them wisely
+- There's a 2-ish second time delay on jumps, so use them wisely
 
 Game Concept
 - Our initial thought was we wanted to do a platformer, as it's something that's relatively new to each of us and also seemed to be less complex than others. Rowen than had the idea of the dust bunny & Roomba concept.
