@@ -14,8 +14,8 @@ public class Roomba
         
     }
 
-    
 
+    //public Texture2D RoombaTexture = Raylib.LoadTexture("../../../resources/visuals/Roomba_Sheet.png");
 
     public void RoombaManager(MoveGrav moveGrav)
     {

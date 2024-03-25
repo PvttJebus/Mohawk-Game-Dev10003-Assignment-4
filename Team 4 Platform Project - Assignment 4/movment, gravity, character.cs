@@ -10,20 +10,24 @@ public class MoveGrav
     public bool hasJumped = false;
     public List<Vector2> playerPositions;
     public bool playerIsAlive = true;
+    public Texture2D DbunnyTexture;
+
 
 
     public MoveGrav()
     {
         playerPositions = new List<Vector2>();
-    }
+
+        Texture2D DbunnyTexture = Raylib.LoadTexture("/../../../resources/visuals/DustBunny_Sheet.png");
+}
 
     public void CharacterController()
     {
-        Raylib.DrawCircleV(playerPosition, 25, Color.Blue);
+        Raylib.DrawTexture(DbunnyTexture, 0,0, Color.RayWhite);
         GravitySim();
         PlayerMovement();
         PlayerPositionTracking();
-        
+
     }
 
     public void PlayerPositionTracking()
@@ -75,7 +79,7 @@ public class MoveGrav
     public void OnTimedEvent(Object source, ElapsedEventArgs e)
     {
         hasJumped = false;
-        
+
     }
 
 }
