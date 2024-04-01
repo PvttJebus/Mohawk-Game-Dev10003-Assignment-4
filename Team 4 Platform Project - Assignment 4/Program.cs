@@ -67,6 +67,10 @@ namespace Team_4_Platform_Project___Assignment_4
             Raylib.DrawRectangle(925, 350, 25, 200, Color.Black);
             Raylib.DrawRectangle(1000, 350, 25, 200, Color.Black);
             Raylib.DrawRectangle(600, 650, 450, 50, Color.Black);
+            Raylib.DrawRectangle(450,800,200,50, Color.Black);
+            Raylib.DrawRectangle(700, 800, 25, 50, Color.Black);
+            Raylib.DrawRectangle(700,850,100,25, Color.Black);
+            Raylib.DrawRectangle(775,800,25,50, Color.Black);
 
             Vector2 rectanglePosition = new Vector2(0,450);
             Vector2 rectangleSize = new Vector2(350,50);
