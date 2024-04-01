@@ -56,7 +56,7 @@ namespace Team_4_Platform_Project___Assignment_4
             // Your game code run each frame here
         }
 
-
+        //A test block to ensure that collision, gravity, and movement are working. To be removed once level is built by team member(s)
         static void TestBlocks()
         {
             
