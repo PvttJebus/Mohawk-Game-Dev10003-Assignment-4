@@ -16,7 +16,8 @@ public class Roomba
 
     
 
-
+    //As mentioned in the player script, the movement is intended to follow the players exact path. So the player could be smart and plan their route to give themselves more time. 
+    //To avoid an instant game-over, the Roomba doesn't activiate until 200 player positions have been tracked
     public void RoombaManager(MoveGrav moveGrav)
     {
         if (moveGrav.playerPositions.Count > 200)
@@ -55,7 +56,7 @@ public class Roomba
     }
 
    
-
+    //Game over, simple. Potential to expand to a more robust screen if team is interested/want to adjust scope. 
     public void GameOver(MoveGrav moveGrav)
     {
         
