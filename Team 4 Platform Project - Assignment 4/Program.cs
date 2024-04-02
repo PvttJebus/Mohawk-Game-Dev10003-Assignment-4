@@ -3,6 +3,7 @@ using System.Numerics;
 
 namespace Team_4_Platform_Project___Assignment_4
 {
+    //We appreciate you raph, and everyone that has worked on this.
     internal class Program
     {
         // If you need variables in the Program class (outside functions), you must mark them as static
