@@ -89,6 +89,8 @@ public class MoveGrav
             }
         }
     }
+
+    // Tried to add camera function here, but didnt give myself enough to work with. wasnt famililar with Git at that point. - Ben
     public void OnTimedEvent(Object source, ElapsedEventArgs e)
     {
         hasJumped = false;
