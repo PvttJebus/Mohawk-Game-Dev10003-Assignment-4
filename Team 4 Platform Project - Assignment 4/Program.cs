@@ -49,6 +49,7 @@ namespace Team_4_Platform_Project___Assignment_4
 
         static void Update()
         {
+            
             moveGrav.CharacterController();
             roomba.RoombaManager(moveGrav);
             TestBlocks();

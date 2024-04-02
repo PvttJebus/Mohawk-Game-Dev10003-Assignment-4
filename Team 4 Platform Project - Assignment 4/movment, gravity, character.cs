@@ -74,7 +74,10 @@ public class MoveGrav
             }
         }
     }
+    public void Restart ()
+    {
 
+    }
     public void OnTimedEvent(Object source, ElapsedEventArgs e)
     {
         hasJumped = false;
