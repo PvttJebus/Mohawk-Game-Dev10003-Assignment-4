@@ -23,7 +23,8 @@ public class MoveGrav
     //Character controller using a simple shape, which will be replaced by textures uploaded by other team members. 
     public void CharacterController()
     {
-        Raylib.DrawTexture(DbunnyTexture, 0,0, Color.RayWhite);
+        //Raylib.DrawTextureV(DbunnyTexture, playerPosition, Color.RayWhite);
+        Raylib.DrawCircleV(playerPosition, 25, Color.Blue);
         GravitySim();
         PlayerMovement();
         PlayerPositionTracking();
