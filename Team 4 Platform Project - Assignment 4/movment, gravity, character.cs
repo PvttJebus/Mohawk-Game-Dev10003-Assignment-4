@@ -76,7 +76,15 @@ public class MoveGrav
     }
     public void Restart ()
     {
+        if (playerIsAlive == false) 
+        {
+            Console.WriteLine("Press R to Restart");
+            Console.ReadLine("R");
+            if (Raylib.IsKeyDown(KeyboardKey.R))
+            {
 
+            }
+        }
     }
     public void OnTimedEvent(Object source, ElapsedEventArgs e)
     {
