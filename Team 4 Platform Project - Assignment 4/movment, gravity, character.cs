@@ -74,6 +74,9 @@ public class MoveGrav
             }
         }
     }
+    //After realizing camera function would be less needed for our project
+    //i decided on focusing on implimenting a restart fuction
+    //Ben was here
     public void Restart ()
     {
         if (playerIsAlive == false) 
