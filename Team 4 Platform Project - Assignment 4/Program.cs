@@ -7,10 +7,9 @@ namespace Team_4_Platform_Project___Assignment_4
     {
         // If you need variables in the Program class (outside functions), you must mark them as static
         static string title = "Game Title";
-
-
         static MoveGrav moveGrav = new MoveGrav();
         static Roomba roomba = new Roomba();
+        
 
         static void Main(string[] args)
         {
@@ -19,8 +18,10 @@ namespace Team_4_Platform_Project___Assignment_4
             // Set the target frames-per-second (FPS)
             Raylib.SetTargetFPS(60);
 
-            // Setup your game. This is a function YOU define.
-            Setup();
+            Texture2D Backgroundtexture = Raylib.LoadTexture("../../../resources/visuals/Background_Atlas.png");
+
+        // Setup your game. This is a function YOU define.
+        Setup();
 
             // Loop so long as window should not close
             while (!Raylib.WindowShouldClose())
@@ -30,11 +31,13 @@ namespace Team_4_Platform_Project___Assignment_4
                 // Clear the canvas with one color
                 Raylib.ClearBackground(Color.RayWhite);
 
+                Raylib.DrawTexture(Backgroundtexture, 0, 0, Color.RayWhite);
+
                 // Your game code here. This is a function YOU define.
                 Update();
 
                 // Stop drawing to the canvas, begin displaying the frame
-                 Raylib.EndDrawing();
+                Raylib.EndDrawing();
             }
             // Close the window
             Raylib.CloseWindow();
@@ -52,7 +55,7 @@ namespace Team_4_Platform_Project___Assignment_4
             moveGrav.CharacterController();
             roomba.RoombaManager(moveGrav);
             TestBlocks();
-            
+
             // Your game code run each frame here
         }
 
@@ -85,13 +88,14 @@ namespace Team_4_Platform_Project___Assignment_4
 
             if (isWithinRectangle)
             {
-                
+
                 if (isBelowBlock && isTravelingDown)
                 {
-                    moveGrav.playerPosition.Y = 450 -20;
+                    moveGrav.playerPosition.Y = 450 - 20;
                     moveGrav.playerVelocity = Vector2.Zero;
                 }
             }
         }
+
     }
 }

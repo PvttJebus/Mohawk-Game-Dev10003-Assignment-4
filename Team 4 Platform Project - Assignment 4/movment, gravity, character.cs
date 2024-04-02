@@ -10,20 +10,24 @@ public class MoveGrav
     public bool hasJumped = false;
     public List<Vector2> playerPositions;
     public bool playerIsAlive = true;
+    public Texture2D DbunnyTexture;
+
 
     public MoveGrav()
     {
         playerPositions = new List<Vector2>();
-    }
+
+        Texture2D DbunnyTexture = Raylib.LoadTexture("/../../../resources/visuals/DustBunny_Sheet.png");
+}
 
     //Character controller using a simple shape, which will be replaced by textures uploaded by other team members. 
     public void CharacterController()
     {
-        Raylib.DrawCircleV(playerPosition, 25, Color.Blue);
+        Raylib.DrawTexture(DbunnyTexture, 0,0, Color.RayWhite);
         GravitySim();
         PlayerMovement();
         PlayerPositionTracking();
-        
+
     }
 
     //When designing the roomba movement, I thought of it being akin to Moe in Walle, who follows exactly where walle went, so the roomba tracks all the positions the dustbunny went, so it can follow. 
@@ -78,7 +82,7 @@ public class MoveGrav
     public void OnTimedEvent(Object source, ElapsedEventArgs e)
     {
         hasJumped = false;
-        
+
     }
 
 }
