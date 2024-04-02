@@ -75,7 +75,7 @@ public class MoveGrav
     public void OnTimedEvent(Object source, ElapsedEventArgs e)
     {
         hasJumped = false;
-        
+
     }
 
 }
