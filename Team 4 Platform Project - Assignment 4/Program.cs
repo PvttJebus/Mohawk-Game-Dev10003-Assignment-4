@@ -15,7 +15,7 @@ namespace Team_4_Platform_Project___Assignment_4
         static void Main(string[] args)
         {
             // Create a window to draw to. The arguments define width and height
-            Raylib.InitWindow(1680, 1050, title);
+            Raylib.InitWindow(1600, 900, title);
             // Set the target frames-per-second (FPS)
             Raylib.SetTargetFPS(60);
 
@@ -56,15 +56,21 @@ namespace Team_4_Platform_Project___Assignment_4
                 // Your game code run each frame here
             }
 
-
+        //A test block to ensure that collision, gravity, and movement are working. To be removed once level is built by team member(s)
         static void TestBlocks()
         {
             
             Raylib.DrawRectangle(0,450,350,50,Color.Black);
-            
+            Raylib.DrawRectangle(400,450,200,50,Color.Black);
+            Raylib.DrawRectangle(600,425,200,50,Color.Black);
+            Raylib.DrawRectangle(800, 350, 100, 50, Color.Black);
+            Raylib.DrawRectangle(925, 350, 25, 200, Color.Black);
+            Raylib.DrawRectangle(1000, 350, 25, 200, Color.Black);
+            Raylib.DrawRectangle(600, 650, 450, 50, Color.Black);
 
             Vector2 rectanglePosition = new Vector2(0,450);
             Vector2 rectangleSize = new Vector2(350,50);
+            
 
             float leftEdge = rectanglePosition.X;
             float rightEdge = rectanglePosition.X + rectangleSize.X;
